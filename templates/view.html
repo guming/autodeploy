@@ -1,0 +1,53 @@
+$def with (serverlist)
+<body> 
+<script type="text/javascript"> 
+function checkAll(name) { 
+	var el = document.getElementsByTagName('input'); 
+	var len = el.length; 
+	for(var i=0; i<len; i++) { 
+	if((el[i].type=="checkbox") && (el[i].name==name)) { 
+	el[i].checked = true; 
+	} 
+	} 
+} 
+function clearAll(name) { 
+	var el = document.getElementsByTagName('input'); 
+	var len = el.length; 
+	for(var i=0; i<len; i++) { 
+	if((el[i].type=="checkbox") && (el[i].name==name)) { 
+	el[i].checked = false; 
+	}
+	} 
+} 
+function view(name){
+	var el = document.getElementsByTagName('input'); 
+	var len = el.length; 
+	var values='';
+	for(var i=0; i<len; i++) { 
+	if((el[i].type=="checkbox") && (el[i].name==name)&& el[i].checked) { 
+		values+=el[i].value+",";
+	} 
+	}
+        values=values.substring(0,values.length-1);
+        document.getElementById('svalues').value=values;
+        document.forms[0].action="/dodeploy";
+        document.forms[0].submit();
+} 
+</script>
+<form action="" method="POST">
+<table>
+<tr>
+<td><input type="checkbox" name="liket" value="" onclick="if(this.checked==true) { checkAll('test'); } else { clearAll('test'); }" /> Select All
+</td>
+</tr>
+
+$for s in serverlist:
+    <tr>
+      <td><input type="checkbox" name="test" value="$s">$s</input></td>
+    </tr>
+</table>
+<br>
+<input type="button" value="view" onclick="view('test')" />
+<input type="hidden" value="" id="svalues" name="svalues" />
+</form>
+</body>

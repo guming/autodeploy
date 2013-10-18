@@ -1,0 +1,28 @@
+[10.1.200.80] Executing task 'runcommand'
+[10.1.200.80] run: free -m
+[10.1.200.80] out:              total       used       free     shared    buffers     cached
+[10.1.200.80] out: Mem:          3949       3912         37          0        270        965
+[10.1.200.80] out: -/+ buffers/cache:       2676       1273
+[10.1.200.80] out: Swap:         3992         94       3898
+[10.1.200.80] out: 
+
+total       used       free     shared    buffers     cached
+Mem:          3949       3912         37          0        270        965
+-/+ buffers/cache:       2676       1273
+Swap:         3992         94       3898
+[10.1.200.82] Executing task 'runcommand'
+[10.1.200.82] run: free -m
+[10.1.200.82] out:              total       used       free     shared    buffers     cached
+[10.1.200.82] out: Mem:          3949       3750        199          0        370        569
+[10.1.200.82] out: -/+ buffers/cache:       2810       1139
+[10.1.200.82] out: Swap:         3992        643       3349
+[10.1.200.82] out: 
+
+total       used       free     shared    buffers     cached
+Mem:          3949       3750        199          0        370        569
+-/+ buffers/cache:       2810       1139
+Swap:         3992        643       3349
+
+Done.
+Disconnecting from 10.1.200.80... done.
+Disconnecting from 10.1.200.82... done.
